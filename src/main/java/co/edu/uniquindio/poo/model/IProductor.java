@@ -1,6 +1,6 @@
 package co.edu.uniquindio.poo.model;
 
 
-public interface Productor {
+public interface IProductor {
     int calcularMinutos(TipoPan tipo, int cantidad);
 }
