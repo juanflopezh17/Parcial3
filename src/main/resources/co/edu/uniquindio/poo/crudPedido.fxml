@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" prefWidth="900" prefHeight="660" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="co.edu.uniquindio.poo.viewController.PedidoViewController">
+    <padding>
+        <Insets top="15" right="15" bottom="15" left="15"/>
+    </padding>
+
+    <Label text="Gestión de Pedidos" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <GridPane hgap="10" vgap="8">
+        <Label text="Código:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <TextField fx:id="txtCodigo" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+        <Label text="Cliente:" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+        <TextField fx:id="txtCliente" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+        <Label text="Tipo de pan:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <ComboBox fx:id="cbTipoPan" prefWidth="160" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        <Label text="Cantidad:" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+        <TextField fx:id="txtCantidad" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+    </GridPane>
+
+    <HBox spacing="10">
+        <Button fx:id="btnRegistrarPedido" onAction="#onRegistrarPedido" text="Registrar pedido"/>
+        <Button fx:id="btnAsignarPedido" onAction="#onAsignarPedido" text="Asignar seleccionado"/>
+        <Button fx:id="btnCancelarPedido" onAction="#onCancelarPedido" text="Cancelar seleccionado"/>
+        <Button fx:id="btnLimpiar" onAction="#onLimpiar" text="Limpiar"/>
+        <Button fx:id="btnVolver" onAction="#onVolver" text="Volver"/>
+    </HBox>
+
+    <Label fx:id="lblMensaje"/>
+
+    <Label text="Pedidos" style="-fx-font-weight: bold;"/>
+    <TableView fx:id="tblListPedido" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="tbcCodigo" text="Código" prefWidth="90"/>
+            <TableColumn fx:id="tbcCliente" text="Cliente" prefWidth="180"/>
+            <TableColumn fx:id="tbcTipoPan" text="Tipo de pan" prefWidth="120"/>
+            <TableColumn fx:id="tbcCantidad" text="Cantidad" prefWidth="80"/>
+            <TableColumn fx:id="tbcEstado" text="Estado" prefWidth="110"/>
+            <TableColumn fx:id="tbcEmpleado" text="Empleado" prefWidth="100"/>
+            <TableColumn fx:id="tbcMinutos" text="Min. reservados" prefWidth="120"/>
+        </columns>
+    </TableView>
+
+    <Label text="Empleados" style="-fx-font-weight: bold;"/>
+    <TableView fx:id="tblListEmpleado" prefHeight="150">
+        <columns>
+            <TableColumn fx:id="tbcEmpCodigo" text="Código" prefWidth="90"/>
+            <TableColumn fx:id="tbcEmpNombre" text="Nombre" prefWidth="200"/>
+            <TableColumn fx:id="tbcEmpTipo" text="Tipo" prefWidth="200"/>
+            <TableColumn fx:id="tbcEmpMinutos" text="Min. disponibles" prefWidth="140"/>
+        </columns>
+    </TableView>
+</VBox>
